@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bl24rai8resv5"]
 
-[ext_resource type="Script" path="res://man_npc.gd" id="1_6mhi7"]
+[ext_resource type="Script" uid="uid://7ebi7lwirsp4" path="res://man_npc.gd" id="1_6mhi7"]
 [ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_nsuh6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nsuh6"]
@@ -19,3 +19,7 @@ texture = ExtResource("1_nsuh6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=2056230280]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_nsuh6")
+
+[node name="Cooldown Timer" type="Timer" parent="." unique_id=402413482]
+unique_name_in_owner = true
+one_shot = true
