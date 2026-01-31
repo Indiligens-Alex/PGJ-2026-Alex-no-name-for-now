@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Fellow Face"
-run/main_scene="uid://dt3gxy7kk87wx"
+run/main_scene="uid://b1e4issy5eeup"
 config/features=PackedStringArray("4.6", "GL Compatibility")
 config/icon="uid://b3f3npo06vjsd"
 
@@ -23,9 +23,7 @@ main="*uid://b2rfgovbm4qs7"
 
 window/size/viewport_width=480
 window/size/viewport_height=270
-window/size/window_width_override=1440
-window/size/window_height_override=810
-window/energy_saving/keep_screen_on=false
+window/size/mode=3
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 

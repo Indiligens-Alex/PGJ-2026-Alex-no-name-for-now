@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="3_mb7is"]
 [ext_resource type="Texture2D" uid="uid://bdrvx76rs2uxr" path="res://art/example_click.png" id="4_62q08"]
 [ext_resource type="Texture2D" uid="uid://dx3x23tle2ps5" path="res://art/pc mouse.png" id="5_kmm38"]
-[ext_resource type="Script" path="res://skip_button.gd" id="6_da22i"]
+[ext_resource type="Script" uid="uid://bgl7whmckouef" path="res://skip_button.gd" id="6_da22i"]
 
 [node name="Explanation" type="Control" unique_id=406401592]
 layout_mode = 3
@@ -109,8 +109,7 @@ offset_bottom = 288.0
 scale = Vector2(0.75, 0.75)
 text = "Fun Items
 
-
-Around the Map
+You find around The Map
 To filter the society people"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -149,7 +148,6 @@ scale = Vector2(0.75, 0.75)
 text = "Left Click on
 someone to
 reveal yourself 
-
 "
 horizontal_alignment = 2
 
