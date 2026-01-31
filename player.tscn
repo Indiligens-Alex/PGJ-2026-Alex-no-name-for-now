@@ -2,6 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bidudgj1mb00t" path="res://player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://dmqtgtjjxofd6" path="res://art/main_character.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://wx0dm16verhy" path="res://art/head.png" id="3_sweqy"]
+[ext_resource type="Texture2D" uid="uid://bmtlvyblvg7te" path="res://art/body.png" id="4_2hs0m"]
+[ext_resource type="Texture2D" uid="uid://3a0erplrsabj" path="res://art/shoes.png" id="5_1jxqw"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(64, 72)
@@ -24,8 +27,28 @@ shape = SubResource("CircleShape2D_onrkg")
 
 [node name="Sprite" type="Sprite2D" parent="." unique_id=824839357]
 unique_name_in_owner = true
+visible = false
 position = Vector2(-0.5, 0)
 texture = ExtResource("2_onrkg")
 hframes = 4
 vframes = 2
 frame = 4
+
+[node name="Head" type="Sprite2D" parent="." unique_id=12845401]
+position = Vector2(0, -25)
+texture = ExtResource("3_sweqy")
+hframes = 4
+vframes = 3
+frame = 4
+
+[node name="Body" type="Sprite2D" parent="." unique_id=965021179]
+position = Vector2(0, 4.5)
+texture = ExtResource("4_2hs0m")
+hframes = 4
+vframes = 2
+
+[node name="Shoes" type="Sprite2D" parent="." unique_id=1123757498]
+position = Vector2(-1, 27)
+texture = ExtResource("5_1jxqw")
+hframes = 4
+vframes = 2

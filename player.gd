@@ -12,6 +12,22 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	direction.x = Input.get_axis("left","right")
 	direction.y = Input.get_axis("up","down")
+	if direction.x == 1:
+		$Head.frame_coords.x = 1
+		$Body.frame_coords.x = 1
+		$Shoes.frame_coords.x = 1
+	elif direction.x == -1:
+		$Head.frame_coords.x = 2
+		$Body.frame_coords.x = 2
+		$Shoes.frame_coords.x = 2
+	elif direction.y == 1:
+		$Head.frame_coords.x = 0
+		$Body.frame_coords.x = 0
+		$Shoes.frame_coords.x = 0
+	elif direction.y == -1:
+		$Head.frame_coords.x = 3
+		$Body.frame_coords.x = 3
+		$Shoes.frame_coords.x = 3
 	velocity = direction.normalized()*speed
 	move_and_slide()
 	if main.isolation >= 100:
