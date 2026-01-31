@@ -34,10 +34,11 @@ func _physics_process(delta: float) -> void:
 		lose()
 
 func unmask() -> void:
-	head.frame_coords.y -= 1
+	if head.frame_coords.y == 0: return
+	head.frame_coords.y = 0
 	speed = 0
 	await get_tree().create_timer(2).timeout
-	head.frame_coords.y += 1
+	head.frame_coords.y = 1
 	speed = base_speed
 
 func _on_man_npc_body_exited(body: Node2D) -> void:
