@@ -4,12 +4,13 @@
 [ext_resource type="Script" uid="uid://d3v1pwh7itink" path="res://test_world_0.gd" id="1_uaw4p"]
 [ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_uaw4p"]
 [ext_resource type="Script" uid="uid://c1ctqfquaa5e7" path="res://npc_collection.gd" id="3_fdqjh"]
+[ext_resource type="AudioStream" uid="uid://brhjswnmgyhm1" path="res://audio/100ambeince.wav" id="5_acrpk"]
 [ext_resource type="AudioStream" uid="uid://cik2eoqcdpaan" path="res://audio/50ambeince.wav" id="6_acrpk"]
 [ext_resource type="Script" uid="uid://d1niqaidenp7v" path="res://ambiance_player.gd" id="7_ofudl"]
 
 [sub_resource type="AudioStreamSynchronized" id="AudioStreamSynchronized_v0xyo"]
 stream_count = 2
-stream_0/stream = ExtResource("6_acrpk")
+stream_0/stream = ExtResource("5_acrpk")
 stream_0/volume = -5.0
 stream_1/stream = ExtResource("6_acrpk")
 stream_1/volume = -5.0
@@ -399,19 +400,8 @@ position = Vector2(448, 176)
 [node name="Man NPC263" parent="NPC Collection" unique_id=1952353966 instance=ExtResource("1_4mqmr")]
 position = Vector2(448, 216)
 
-[node name="AmbiancePlayer" type="AudioStreamPlayer" parent="." unique_id=1462873763 node_paths=PackedStringArray("player")]
+[node name="AmbiancePlayer" type="AudioStreamPlayer" parent="." unique_id=1462873763]
 stream = SubResource("AudioStreamSynchronized_v0xyo")
 volume_db = -6.0
 autoplay = true
 script = ExtResource("7_ofudl")
-player = NodePath("../Player")
-transition = 1.0
-
-[node name="Button" type="Button" parent="." unique_id=316011267]
-offset_left = 136.0
-offset_top = 88.0
-offset_right = 344.0
-offset_bottom = 119.0
-text = "Return To The Main Menu"
-
-[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
