@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://8vfynrnle4k0"]
 
-[ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_4flbx"]
 [ext_resource type="Script" uid="uid://bidudgj1mb00t" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://dmqtgtjjxofd6" path="res://art/main_character.png" id="2_onrkg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4flbx"]
 size = Vector2(17, 28)
@@ -16,4 +16,7 @@ shape = SubResource("RectangleShape2D_4flbx")
 [node name="ScaryMan" type="Sprite2D" parent="." unique_id=824839357]
 texture_filter = 1
 position = Vector2(2, -29)
-texture = ExtResource("1_4flbx")
+texture = ExtResource("2_onrkg")
+hframes = 4
+vframes = 2
+frame = 4
