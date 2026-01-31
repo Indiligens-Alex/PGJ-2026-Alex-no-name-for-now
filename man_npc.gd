@@ -10,10 +10,12 @@ var player: Player
 @export var search_radius: float = 5
 @onready var cooldown_timer: Timer = %"Cooldown Timer"
 @onready var man: Sprite2D = %Man
+@onready var disgusted_timer: Timer = %DisgustedTimer
 
 func _ready() -> void:
 	if not get_node("/root/World/Player") == null: 
 		player = get_node("/root/World/Player")
+	
 	var rand_offset: Vector2 = Vector2(randf_range(-5, 5), randf_range(-2, 5.5))
 	position += rand_offset
 	cooldown_timer.timeout.connect(walk_around)
@@ -22,13 +24,14 @@ func _ready() -> void:
 
 func check_if_player(node: Node2D) -> void:
 	#print(node.name)
-	if node.name == "Player":
-		player.unmasked.connect(reaction)
+	if player != null:
+		if node.name == "Player":
+			player.unmasked.connect(reaction)
 
 func walk_around() -> void:
 	var t: Tween = create_tween()
 	if not disgusted: 
-		destination = global_position + Vector2(randf_range(-search_radius, search_radius), randf_range(-search_radius, search_radius))
+		find_destination()
 		turn_sprite()
 		t.tween_property(self, "global_position", destination, walk_time)
 		start_cooldown(false)
@@ -36,6 +39,32 @@ func walk_around() -> void:
 		turn_sprite_digusted()
 		t.tween_property(self, "global_position", destination, walk_time/2)
 		start_cooldown(true)
+
+func find_destination() -> void:
+	var min_x := 24.0
+	var max_x := 460.0
+	var min_y := 32.0
+	var max_y := 240.0
+
+	var offset := Vector2(
+		randf_range(-search_radius, search_radius),
+		randf_range(-search_radius, search_radius))
+
+	if global_position.y < min_y:
+		offset.y = abs(search_radius)
+	elif global_position.y > max_y:
+		offset.y = -abs(search_radius)
+
+	if global_position.x < min_x:
+		offset.x = abs(search_radius)
+	elif global_position.x > max_x:
+		offset.x = -abs(search_radius)
+
+	destination = global_position + offset
+	destination.x = clamp(destination.x, min_x, max_x)
+	destination.y = clamp(destination.y, min_y, max_y)
+
+	print(global_position)
 
 func start_cooldown(quick: bool) -> void:
 	if quick:
@@ -108,4 +137,11 @@ func turn_sprite_digusted() -> void:
 	
 func reaction() -> void:
 	disgusted = true
-	
+	disgusted_timer.start(5)
+
+func _on_disgusted_timer_timeout() -> void:
+	disgusted = false
+
+func _on_body_exited(body: Node2D) -> void:
+	if player != null:
+		player.unmasked.disconnect(reaction)

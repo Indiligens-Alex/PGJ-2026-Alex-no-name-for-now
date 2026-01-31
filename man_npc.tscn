@@ -4,16 +4,23 @@
 [ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_nsuh6"]
 [ext_resource type="Shader" uid="uid://c1xvfnqfulch5" path="res://glowPeople.gdshader" id="2_ubqif"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_6mhi7"]
+radius = 35.0
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_2b317"]
 shader = ExtResource("2_ubqif")
 shader_parameter/active = true
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6mhi7"]
-radius = 35.0
-
 [node name="Man NPC" type="Area2D" unique_id=1927863307]
 y_sort_enabled = true
 script = ExtResource("1_6mhi7")
+
+[node name="Cooldown Timer" type="Timer" parent="." unique_id=402413482]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056230280]
+shape = SubResource("CircleShape2D_6mhi7")
 
 [node name="Man" type="Sprite2D" parent="." unique_id=573814096]
 unique_name_in_owner = true
@@ -23,9 +30,9 @@ position = Vector2(-0.5, 0)
 texture = ExtResource("1_nsuh6")
 hframes = 4
 
-[node name="Cooldown Timer" type="Timer" parent="." unique_id=402413482]
+[node name="DisgustedTimer" type="Timer" parent="." unique_id=311554407]
 unique_name_in_owner = true
 one_shot = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2056230280]
-shape = SubResource("CircleShape2D_6mhi7")
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="DisgustedTimer" to="." method="_on_disgusted_timer_timeout"]
