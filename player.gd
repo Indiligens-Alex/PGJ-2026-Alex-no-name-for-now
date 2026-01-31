@@ -26,7 +26,8 @@ func unmask() -> void:
 
 func _on_man_npc_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
-
+func lose():
+	print(":(")
 func interact():
 	interaction.emit()
 	unmask()
