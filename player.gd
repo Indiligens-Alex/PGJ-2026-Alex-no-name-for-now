@@ -30,8 +30,8 @@ func _physics_process(delta: float) -> void:
 		$Shoes.frame_coords.x = 3
 	velocity = direction.normalized()*speed
 	move_and_slide()
-	if main.belonging >= 100:
-		lose()
+	if main.belonging <= 0:
+		main.SceneSwitcher.lose()
 
 func unmask() -> void:
 	if head.frame_coords.y == 0: return
@@ -44,8 +44,6 @@ func unmask() -> void:
 func _on_man_npc_body_exited(body: Node2D) -> void:
 	pass # Replace with function body.
 
-func lose():
-	print(":(")
 
 func interact():
 	interaction.emit()

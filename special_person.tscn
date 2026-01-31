@@ -45,6 +45,10 @@ one_shot = true
 position = Vector2(0, -12.75)
 shape = SubResource("RectangleShape2D_ubqif")
 
+[node name="Endgame" type="Timer" parent="." unique_id=977129507]
+wait_time = 3.0
+one_shot = true
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_body_exited"]
 [connection signal="timeout" from="GivingChance" to="." method="_on_giving_chance_timeout"]
@@ -52,3 +56,4 @@ shape = SubResource("RectangleShape2D_ubqif")
 [connection signal="input_event" from="MouseInteraction" to="." method="_on_input_event"]
 [connection signal="mouse_entered" from="MouseInteraction" to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="MouseInteraction" to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Endgame" to="." method="_on_endgame_timeout"]

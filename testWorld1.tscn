@@ -16,6 +16,15 @@ base_speed = 50.0
 [node name="Man NPC" parent="." unique_id=1927863307 instance=ExtResource("3_xslxd")]
 position = Vector2(72, 163)
 
+[node name="Man NPC4" parent="." unique_id=872010461 instance=ExtResource("3_xslxd")]
+position = Vector2(72, 163)
+
+[node name="Man NPC5" parent="." unique_id=1195783116 instance=ExtResource("3_xslxd")]
+position = Vector2(83, 73)
+
+[node name="Man NPC6" parent="." unique_id=1159702939 instance=ExtResource("3_xslxd")]
+position = Vector2(128, 150)
+
 [node name="Man NPC2" parent="." unique_id=2119870850 instance=ExtResource("3_xslxd")]
 position = Vector2(248, 72)
 

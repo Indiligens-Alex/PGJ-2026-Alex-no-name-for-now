@@ -3,8 +3,9 @@ class_name SceneSwitcher extends Node2D
 var main_menu = preload("res://Scenes/canvas_main_menu.tscn")
 var explanation = preload("res://Scenes/canvas_explanation.tscn")
 var game = preload("res://Scenes/Map.tscn")
-#var lose_screen =  preload("res://scenes/Settings.tscn")
-#var win_screen =  preload("res://scenes/Settings.tscn")
+var lose_screen =  preload("res://Scenes/lose_screen.tscn")
+var test1 =  preload("res://testWorld1.tscn")
+var win_screen =  preload("res://Scenes/win_screen.tscn")
 func _ready() -> void:
 	main.SceneSwitcher = self
 func switch_scene(scene):
@@ -16,4 +17,8 @@ func to_explanation():
 func to_main_menu():
 	switch_scene(main_menu.instantiate())
 func start_game():
-	switch_scene(game.instantiate())
+	switch_scene(test1.instantiate())
+func win():
+	switch_scene(win_screen.instantiate())
+func lose():
+	switch_scene(lose_screen.instantiate())

@@ -24,6 +24,9 @@ main="*uid://b2rfgovbm4qs7"
 window/size/viewport_width=480
 window/size/viewport_height=270
 window/size/mode=3
+window/size/window_width_override=1440
+window/size/window_height_override=810
+window/energy_saving/keep_screen_on=false
 window/stretch/mode="viewport"
 window/stretch/scale_mode="integer"
 

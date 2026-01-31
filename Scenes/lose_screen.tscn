@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://bic5g8o6ucx2n"]
+
+[ext_resource type="Texture2D" uid="uid://cbus1nx2sddb7" path="res://art/scaryMan.png" id="1_s2rrh"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=464420192]
+
+[node name="Control" type="Control" parent="." unique_id=7537300]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ScaryMan" type="Sprite2D" parent="." unique_id=486668602]
+position = Vector2(216.99998, 389)
+scale = Vector2(11.0625, 11.0625)
+texture = ExtResource("1_s2rrh")
+hframes = 4
+
+[node name="Label" type="Label" parent="." unique_id=1051342217]
+offset_left = 47.0
+offset_right = 423.0
+offset_bottom = 57.0
+theme_override_font_sizes/font_size = 41
+text = "You are truly alone"
+
+[node name="Button" type="Button" parent="." unique_id=1103491385]
+offset_left = 135.0
+offset_top = 207.0
+offset_right = 317.0
+offset_bottom = 272.0
+theme_override_font_sizes/font_size = 41
+text = "try again"
