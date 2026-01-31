@@ -4,6 +4,7 @@ var disgusted: bool
 var destination: Vector2
 var dir: Vector2
 var player_pos: Vector2
+var player: Player
 
 @export var walk_time: float = 1
 @export var search_radius: float = 5
@@ -11,6 +12,8 @@ var player_pos: Vector2
 @onready var man: Sprite2D = %Man
 
 func _ready() -> void:
+	if not get_node("/root/World/Player") == null: 
+		player = get_node("/root/World/Player")
 	var rand_offset: Vector2 = Vector2(randf_range(-5, 5), randf_range(-2, 5.5))
 	position += rand_offset
 	cooldown_timer.timeout.connect(walk_around)
@@ -18,10 +21,9 @@ func _ready() -> void:
 	walk_around()
 
 func check_if_player(node: Node2D) -> void:
-	if node.get_class() == "CharacterBody2D" or "Player":
-		disgusted = true
-	else:
-		disgusted = false
+	print(node.name)
+	if node.name == "Player":
+		player.unmasked.connect(reaction)
 
 func walk_around() -> void:
 	var t: Tween = create_tween()
@@ -73,4 +75,7 @@ func turn_sprite() -> void:
 			man.frame = 2
 		"up":
 			man.frame = 3
+	
+func reaction() -> void:
+	disgusted
 	
