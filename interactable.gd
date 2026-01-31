@@ -26,4 +26,5 @@ func _on_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
 func interact():
 	if changeClothes:
 		main.player.changeClothes(clothes)
+		visible = false
 	print("interacted")

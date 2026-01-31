@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bgl8d1ri6wtps"]
+
+[ext_resource type="PackedScene" uid="uid://cwh2hndmjlrab" path="res://explanation.tscn" id="1_sxbts"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=560388158]
+
+[node name="Explanation" parent="." unique_id=406401592 instance=ExtResource("1_sxbts")]
