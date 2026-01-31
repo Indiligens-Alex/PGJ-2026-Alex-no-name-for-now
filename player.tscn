@@ -34,6 +34,7 @@ vframes = 2
 frame = 4
 
 [node name="Head" type="Sprite2D" parent="." unique_id=12845401]
+unique_name_in_owner = true
 position = Vector2(0, -25)
 texture = ExtResource("3_sweqy")
 hframes = 4

@@ -1,11 +1,10 @@
 class_name Player extends CharacterBody2D
 signal interaction
 
-var direction:Vector2 = Vector2.ZERO;
-@export var base_speed: float = 20
+@onready var head: Sprite2D = %Head
+@export var base_speed: float = 40
 var speed = base_speed
-
-@onready var sprite: Sprite2D = %Sprite
+var direction:Vector2 = Vector2.ZERO;
 
 func _ready() -> void:
 	main.player = self
@@ -35,10 +34,10 @@ func _physics_process(delta: float) -> void:
 		lose()
 
 func unmask() -> void:
-	sprite.frame_coords.y = sprite.frame_coords.y-1
+	head.frame_coords.y -= 1
 	speed = 0
 	await get_tree().create_timer(2).timeout
-	sprite.frame_coords.y = sprite.frame_coords.y+1
+	head.frame_coords.y += 1
 	speed = base_speed
 
 func _on_man_npc_body_exited(body: Node2D) -> void:

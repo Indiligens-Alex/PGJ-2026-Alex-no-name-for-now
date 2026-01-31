@@ -9,7 +9,7 @@ var player: Player
 var selected = false
 var closeToPlayer = false
 @export var walk_time: float = 1
-@export var search_radius: float = 5
+@export var search_radius: float = 12
 @onready var cooldown_timer: Timer = %"Cooldown Timer"
 @onready var man: Sprite2D = %Man
 @onready var disgusted_timer: Timer = %DisgustedTimer
@@ -31,7 +31,7 @@ func walk_around() -> void:
 	if not disgusted: 
 		find_destination()
 		turn_sprite()
-		t.tween_property(self, "global_position", destination, walk_time)
+		t.tween_property(self, "global_position", destination, walk_time).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
 		start_cooldown(false)
 	else:
 		turn_sprite_digusted()
