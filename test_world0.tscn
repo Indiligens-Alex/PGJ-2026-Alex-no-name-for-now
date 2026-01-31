@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://8vfynrnle4k0" path="res://player.tscn" id="2_uaw4p"]
 [ext_resource type="Script" uid="uid://c1ctqfquaa5e7" path="res://npc_collection.gd" id="3_fdqjh"]
 [ext_resource type="AudioStream" uid="uid://brhjswnmgyhm1" path="res://audio/100ambeince.wav" id="4_e6aui"]
+[ext_resource type="PackedScene" uid="uid://cnnp2nutpq17s" path="res://UI_ingame.tscn" id="6_fjr4f"]
 
 [node name="World" type="Node" unique_id=1342123251]
 script = ExtResource("1_uaw4p")
@@ -720,5 +721,7 @@ offset_top = 104.0
 offset_right = 312.0
 offset_bottom = 135.0
 text = "Return To The Main Menu"
+
+[node name="Control" parent="." unique_id=911047087 instance=ExtResource("6_fjr4f")]
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
