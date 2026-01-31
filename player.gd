@@ -30,7 +30,7 @@ func _physics_process(delta: float) -> void:
 		$Shoes.frame_coords.x = 3
 	velocity = direction.normalized()*speed
 	move_and_slide()
-	if main.isolation >= 100:
+	if main.belonging >= 100:
 		lose()
 
 func unmask() -> void:

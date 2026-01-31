@@ -8,5 +8,7 @@ const MUTE_VOL := -50
 #func _ready() -> void:
 	#pass 
 
-#func _process(_delta: float) -> void:
+func _process(_delta: float) -> void:	
+	if main.belonging < 50:
+		pass
 	#print(stream.stream_0.stream)

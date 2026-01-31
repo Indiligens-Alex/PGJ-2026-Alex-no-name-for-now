@@ -136,7 +136,7 @@ func turn_sprite_digusted() -> void:
 func reaction() -> void:
 	got_disgusted.emit()
 	disgusted = true
-	main.isolation += 5;
+	main.belonging += 5;
 	disgusted_timer.start(5)
 
 func _on_disgusted_timer_timeout() -> void:
